@@ -1,3 +1,12 @@
+/**
+ * @file Book.cpp
+ * @author Sam Emison + Cole Belew
+ * @date 2024-11-07
+ * @brief Storage for Books 
+ * 
+ * Provides the actual commands for getting the book data and storing it
+ */
+
 #include "Book.h"
 
 //Constructor

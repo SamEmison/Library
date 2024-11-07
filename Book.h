@@ -1,8 +1,25 @@
+/**
+ * @file Book.h
+ * @author Sam Emison + Cole Belew
+ * @date 2024-11-07
+ * @brief Class for Book
+ * 
+ * Stated in class definition
+ */
+
 #ifndef BOOK_H
 #define BOOK_H
 
 #include <string>
 
+
+/**
+ * Class for getting the information on the books
+ *
+ * @class BOOK Book.h "Library/Book.h"
+ * @brief 
+ *
+ */
 class BOOK {
  private:
   std::string title;

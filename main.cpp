@@ -1,3 +1,12 @@
+/**
+ * @file main.cpp
+ * @author Sam Emison
+ * @date 2024-11-07
+ * @brief Main
+ * 
+ * The main for the program. Calls functions and provides the interactable part of the program
+ */
+
 #include <iostream>
 #include "Library.h"
 
