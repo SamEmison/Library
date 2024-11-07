@@ -23,12 +23,16 @@ $(TARGET): $(OBJS)
 	$(CC) $(OBJS) -o $(TARGET)
 
 #Compiles main.o from source
-main.o: main.cpp Library.h
+main.o: main.cpp Library.h Book.h
 	$(CC) $(CFLAGS) main.cpp -o main.o
 
 #Compiles Library.o from source
-Library.o: Library.cpp Library.h
+Library.o: Library.cpp Library.h Book.h
 	$(CC) $(CFLAGS) Library.cpp -o Library.o
+
+#Compiles Book.o from source
+Book.o: Book.cpp Book.h
+	$(CC) $(CFLAGS) Book.cpp -o Book.o
 
 clean: #Cleans everything up
 	rm -f *.o *~ $(TARGET)
