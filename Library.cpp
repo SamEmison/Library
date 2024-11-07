@@ -18,7 +18,7 @@ Library::~Library() {
 
 //Insert a book in a order, sorted by author name
 void Library::insert_sorted(const std::string &title, const std::string &author, const std::string &isbn, int pages, float price, int year) {
-  Book* new_book = new Book(title, author, isbn, pagesm price, year);
+  Book* new_book = new Book(title, author, isbn, pages, price, year);
 
   if (!head || head-> author > author) {
     new_book->next = head;
@@ -31,31 +31,37 @@ void Library::insert_sorted(const std::string &title, const std::string &author,
     }
 
     new_book->next = current->next;
-    current-> = new_book;
+    current->next = new_book;
   }
 }
 
 
 //Find a book via title and return data
-std::string Library::findTitle(const std::string &title) const {
+void Library::find_album(const std::string &title) const {
   Book* current = head;
+  bool found = false;
   while (current) {
     if (current->title == title) {
-      return current-> + " - " + current->title + " (" + std::to_string(current->year) + ")";
+      std::cout << current->author + " - " + current->isbn + " (" << current->year << ")\n";
+      std::cout << "Price: " << current->price << std::endl;
+      found = true;
     }
     current = current->next;
   }
-  return "Book not found";
+  if (!found) {
+    std::cout << "No books found with the title " << title << std::endl;
+  }
 }
 
 
 //Find books via author and print their title
-void Library::findAuthor(const std::string &author) const {
+void Library::find_author(const std::string &author) const {
   Book* current = head;
   bool found = false;
   while (current) {
     if (current->author == author) {
       std::cout << current->title << " - " << current->isbn << " (" << current->year << ")\n";
+      std::cout << "Price: " << current->price << std::endl;
       found = true;
     }
     current = current->next;
@@ -103,6 +109,8 @@ bool Library::write_to_file(const std::string &filename) const {
   while (current) {
     outfile << current->title << "\n" << current->author << "\n" << current->isbn << "\n";
     outfile << current->pages << "\n" << current->price << "\n" << current->year << "\n";
+    outfile << "\n"; //Adds space between books to keep format
+    
     current = current->next;
   }
   outfile.close();
@@ -122,6 +130,7 @@ bool Library::read_from_file(const std::string &filename) {
   while(std::getline(file, title) && std::getline(file, author) && std::getline(file, isbn) && file >> pages >> price >> year) {
     file.ignore();
     insert_sorted(title, author, isbn, pages, price, year);
+    file.ignore(); //Skips the newline in between the books
   }
 
   file.close();

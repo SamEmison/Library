@@ -27,9 +27,9 @@ class Library {
   ~Library(); //Destructor
 
   //Functionality to manage the books
-  void instert_sorted(const std::string &title, const std::string &author, std::string &isbn, int pages, float price, int year);
-  std::string findTitle(const std::string &title) const;
-  void findAuthor(const std::string &author) const;
+  void insert_sorted(const std::string &title, const std::string &author, const std::string &isbn, int pages, float price, int year);
+  void find_album(const std::string &title) const;
+  void find_author(const std::string &author) const;
   bool deleteBook(const std::string &author, const std::string &title);
   bool write_to_file(const std::string &filename) const;
   bool read_from_file(const std::string &filename);

@@ -10,9 +10,8 @@ int main() {
   int pages, year;
   double price;
 
-  do{
-    cout << end;
-    cout << "Library System Menu: " << endl;
+  do {
+    cout << "\nLibrary System Menu: " << endl;
     cout << "1. Add Book" << endl;
     cout << "2. Display All Books" << endl;
     cout << "3. Find Book Via Author" << endl;
@@ -27,49 +26,55 @@ int main() {
     switch (choice) {
     case 1:
       cout << "Enter Book Title: ";
-      cin >> title;
+      getline(cin, title);
+      cout << " " << endl;
       
       cout << "Enter Author: ";
-      cin >> author;
+      getline(cin, author);
+      cout << " " << endl;
       
       cout << "Enter ISBN: ";
-      cin >> isbn;
+      getline(cin, isbn);
+      cout << " " << endl;
 
       cout << "Enter Number of Pages: ";
       cin >> pages;
+      cout << " " << endl;
 
       cout << "Enter Price: ";
       cin >> price;
+      cout << " " << endl;
 
       cout << "Enter Year of Publication: ";
       cin >> year;
+      cout << " " << endl;
 
       lib.insert_sorted(title, author, isbn, pages, price, year);
       cout << "Book added successfully!" << endl;
       break;
 
     case 2:
-      cout << "All Books in the Library..." << endl;
+      cout << "\nAll Books in the Library..." << endl;
       lib.print();
       break;
 
     case 3:
       cout << "Enter Author's Name: ";
-      cin >> author;
+      getline(cin, author);
       lib.find_author(author);
       break;
 
     case 4:
       cout << "Enter Book Title: ";
-      cin >> title;
-      lib.findTitle(title);
+      getline(cin, title);
+      lib.find_album(title);
       break;
 
     case 5:
       cout << "Enter Author's Name: ";
-      cin >> author;
+      getline(cin, author);
       cout << "Enter Book Title: ";
-      cin >> title;
+      getline(cin, title);
       if (lib.deleteBook(author, title)) {
 	cout << "Book Deleted Successfully!" << endl;
       }
@@ -90,6 +95,8 @@ int main() {
 	  cout << "Error Reading File" << endl;
 	}
       }
+      break;
+      
 
     case 7:
       {
