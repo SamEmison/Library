@@ -8,7 +8,7 @@
  */
 
 This program allows for the user to do a variety of funtions that would be helpful for a library of books.
-When the user runs make, the executable will be ./test
+When the user runs make, the executable will be ./test.
 Upon running ./test the user will be prompted with a list of commands that can be run.
 
 1. Add a Book

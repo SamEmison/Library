@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @author Sam Emison
+ * @author Sam Emison + Cole Belew
  * @date 2024-11-07
  * @brief Main
  * 
@@ -14,12 +14,13 @@ using namespace std;
 
 int main() {
   Library lib;
+  //Variables
   int choice;
   string title, author, isbn;
   int pages, year;
   double price;
 
-  do {
+  do { //Menu for commands
     cout << "\nLibrary System Menu: " << endl;
     cout << "1. Add Book" << endl;
     cout << "2. Display All Books" << endl;
@@ -32,8 +33,8 @@ int main() {
     cin >> choice;
     cin.ignore();
 
-    switch (choice) {
-    case 1:
+    switch (choice) { //Start of options
+    case 1: //Adds a book
       cout << "Enter Book Title: ";
       getline(cin, title);
       cout << " " << endl;
@@ -62,24 +63,24 @@ int main() {
       cout << "Book added successfully!" << endl;
       break;
 
-    case 2:
+    case 2: //Display books
       cout << "\nAll Books in the Library..." << endl;
       lib.print();
       break;
 
-    case 3:
+    case 3: //Find book via author
       cout << "Enter Author's Name: ";
       getline(cin, author);
       lib.find_author(author);
       break;
 
-    case 4:
+    case 4: //Find book via title
       cout << "Enter Book Title: ";
       getline(cin, title);
       lib.find_album(title);
       break;
 
-    case 5:
+    case 5: //Delete Book
       cout << "Enter Author's Name: ";
       getline(cin, author);
       cout << "Enter Book Title: ";
@@ -92,7 +93,7 @@ int main() {
       }
       break;
 
-    case 6:
+    case 6: //Read from a file
       {
 	string filename;
 	cout << "Enter the filename to read from: ";
@@ -107,7 +108,7 @@ int main() {
       break;
       
 
-    case 7:
+    case 7: //Write to a file
       {
 	string filename;
 	cout << "Enter the filename to write to: ";
@@ -121,7 +122,7 @@ int main() {
       }
       break;
 
-    case 8:
+    case 8: //Exit code
       cout << "Exiting the Program... Goodbye!" << endl;
       break;
 
