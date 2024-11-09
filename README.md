@@ -1,6 +1,6 @@
 /**
  * @file README.md
- * @author Sam Emison
+ * @author Sam Emison adn Cole Belew
  * @date 2024-11-06
  * @brief Library Assignment
  * 
@@ -29,7 +29,7 @@ Upon running ./test the user will be prompted with a list of commands that can b
    	 Just simply exits
 
 Included in the file is a book.txt file that contains 2 books.
-Any .txt file can be used as long as it contains this format (Including the Space in between each book data)
+Any .txt file can be used as long as it contains this format (With no space in between books)
 
 The Catcher in the Rye
 J.D. Salinger
@@ -37,7 +37,6 @@ J.D. Salinger
 277
 9.99
 1951
-
 To Kill a Mockingbird
 Harper Lee
 0987654321
@@ -45,7 +44,7 @@ Harper Lee
 7.99
 1960
 
-Which uses:
+Which uses this as the format:
 (Title)
 (Author; Last Name, First Name)
 (ISBN Number) (Reads as a string so can contain dashes)

@@ -109,7 +109,6 @@ bool Library::write_to_file(const std::string &filename) const {
   while (current) {
     outfile << current->title << "\n" << current->author << "\n" << current->isbn << "\n";
     outfile << current->pages << "\n" << current->price << "\n" << current->year << "\n";
-    outfile << "\n"; //Adds space between books to keep format
     
     current = current->next;
   }
@@ -130,7 +129,6 @@ bool Library::read_from_file(const std::string &filename) {
   while(std::getline(file, title) && std::getline(file, author) && std::getline(file, isbn) && file >> pages >> price >> year) {
     file.ignore();
     insert_sorted(title, author, isbn, pages, price, year);
-    file.ignore(); //Skips the newline in between the books
   }
 
   file.close();
