@@ -3,7 +3,7 @@
 #* @author Sam Emison + Cole Belew
 #* @date 2024-11-06
 #* @brief Makfile for Library Assignment
-#* 
+#* .
 #* Cleans everything up and creates an executable
 #*/
 # Modified from last assignment

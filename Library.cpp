@@ -1,3 +1,12 @@
+/**
+ * @file Library.cpp
+ * @author Sam Emison
+ * @date 2024-11-08
+ * @brief Code for the functions in the library class
+ * 
+ * Has the code for the functions inside of the library class. Gives it functionality
+ */
+
 #include "Library.h"
 #include <fstream>
 
